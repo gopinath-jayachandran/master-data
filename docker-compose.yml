@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+#    depends_on:
+#      - db
+    environment:
+       SQLALCHEMY_DATABASE_URI : postgresql://postgres:12345$6789@192.168.1.40:5432/tmp
+#    env_file:
+#      - .env
+
+volumes:
+  postgres-data:
